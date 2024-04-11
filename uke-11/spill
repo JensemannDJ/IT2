@@ -1,0 +1,35 @@
+import pygame
+
+# Initialize Pygame
+pygame.init()
+
+# Set up some constants
+WIDTH, HEIGHT = 800, 600
+BUBBLE_RADIUS = 20
+BUBBLE_COLOR = (0, 0, 255)
+
+# Create the game window
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+
+# Create a bubble
+bubble = pygame.draw.circle(screen, BUBBLE_COLOR, (WIDTH // 2, HEIGHT // 2), BUBBLE_RADIUS)
+
+# Run the game loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Fill the screen with the background color
+    screen.fill((255, 255, 255))
+
+    # Draw the bubble
+    pygame.draw.circle(screen, BUBBLE_COLOR, (WIDTH // 2, HEIGHT // 2), BUBBLE_RADIUS)
+
+    # Flip the display
+    pygame.display.flip()
+
+# Quit Pygame
+pygame.quit()
+
